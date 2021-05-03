@@ -6,7 +6,7 @@
 int main ()
 {
   
-  printf("Deneme);
+  printf("Deneme");
          
   return 0;
 }
