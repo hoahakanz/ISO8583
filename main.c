@@ -1,12 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "ISO8583.h"
 
-
-
-int main ()
+int main()
 {
-  
-  printf("Deneme");
-         
-  return 0;
+    printf("%d",sizeof(tagISO8583));
+    puts("");
+    return 0;
 }
+  
