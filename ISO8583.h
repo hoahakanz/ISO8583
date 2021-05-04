@@ -7,7 +7,44 @@
 typedef unsigned char byte;
 typedef unsigned int uint;
 
-
+#define LEN_MSG_CODE			4
+#define LEN_BITMAP				8
+#define LEN_PAN					19
+#define LEN_NII					3
+#define LEN_PROC_CODE			6
+#define LEN_TRAN_AMT			12
+#define LEN_POS_STAN			6
+#define LEN_LOCAL_TIME			6
+#define LEN_LOCAL_DATE			4
+#define LEN_EXP_DATE			4
+#define LEN_SETTLE_DATE			4
+#define LEN_ENTRY_MODE			4	// In order to deal with left alignment
+#define LEN_PAN_SEQ_NO		    4
+#define LEN_SVR_CODE			2
+#define LEN_CAPTURE_CODE		2
+#define LEN_ACQUIRER_ID			11
+#define LEN_TRACK2				37
+#define LEN_TRACK3				104
+#define LEN_RRN					12
+#define LEN_AUTH_CODE			6
+#define LEN_RSP_CODE			2
+#define LEN_TERM_ID				8
+#define LEN_MERCHANT_ID			15
+#define LEN_ADD_RSP_DATA		25
+#define LEN_FIELD43				40
+#define LEN_FIELD48				100
+#define LEN_CURRENCY_CODE		3
+#define LEN_PIN_DATA			8
+#define LEN_SECURITY_INFO		16
+#define LEN_EXT_AMOUNT			40 
+#define LEN_ICC_DATA			260
+#define LEN_EP_DATA				100
+#define LEN_FIELD60				17 
+#define LEN_ORIGINAL_MSG		29
+#define LEN_FIELD61				300
+#define LEN_FIELD62				512
+#define LEN_FIELD63				1024
+#define LEN_MAC_DATA			8
 
 
 typedef struct _tagISO8583{
@@ -81,6 +118,27 @@ typedef struct _tagISO8583{
     
 }tagISO8583;
 
+/*for eElementAttr*/
+#define Attr_a			0
+#define Attr_b			1
+#define Attr_n			2
+#define Attr_z			3
+#define Attr_UnUsed		4
+#define Attr_Over		5
+
+/*for eLengthAttr*/
+#define Attr_var1		0
+#define Attr_var2		1
+#define Attr_fix		2
+
+typedef struct _tagFIELD_ATTR {
+    byte	eElementAttr;
+    byte	eLengthAttr;
+    uint		uiLength;
+}FIELD_ATTR;
+
+extern FIELD_ATTR	glMsg0[];
+extern FIELD_ATTR	glData0[];
 
 extern tagISO8583	SendPack,RecvPack;
 
