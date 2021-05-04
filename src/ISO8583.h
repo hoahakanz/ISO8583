@@ -7,6 +7,7 @@
 typedef unsigned char byte;
 typedef unsigned int uint;
 
+
 #define LEN_MSG_CODE			4
 #define LEN_BITMAP				8
 #define LEN_PAN					19
@@ -50,7 +51,7 @@ typedef unsigned int uint;
 typedef struct _tagISO8583{
 
 /*   0 */     byte MsgCode[4];              // Message Type Indicator
-/*   1 */     byte BitMap[16];              // Bitmap
+/*   1 */     byte BitMap[8];              // Bitmap
 /*   2 */     byte Pan[19];                 // Primary Account Number
 /*   3 */     byte ProcCode[6];             // Processing Code
 /*   4 */     byte TranAmt[12];             // Amount   Txn
@@ -118,27 +119,7 @@ typedef struct _tagISO8583{
     
 }tagISO8583;
 
-/*for eElementAttr*/
-#define Attr_a			0
-#define Attr_b			1
-#define Attr_n			2
-#define Attr_z			3
-#define Attr_UnUsed		4
-#define Attr_Over		5
 
-/*for eLengthAttr*/
-#define Attr_var1		0
-#define Attr_var2		1
-#define Attr_fix		2
-
-typedef struct _tagFIELD_ATTR {
-    byte	eElementAttr;
-    byte	eLengthAttr;
-    uint		uiLength;
-}FIELD_ATTR;
-
-extern FIELD_ATTR	glMsg0[];
-extern FIELD_ATTR	glData0[];
 
 extern tagISO8583	SendPack,RecvPack;
 
